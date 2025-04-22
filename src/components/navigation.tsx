@@ -1,61 +1,63 @@
-"use client"
+'use client';
 
-import { usePathname, useRouter } from "next/navigation"
-import { Home, Calendar, Utensils, Cpu } from "lucide-react"
+import { usePathname, useRouter } from 'next/navigation';
+import { Calendar, Utensils, Cpu, Brain } from 'lucide-react';
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+	NavigationMenu,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
 
 export function MainNav() {
-  const pathname = usePathname()
-  const router = useRouter()
+	const pathname = usePathname();
+	const router = useRouter();
 
-  const navItems = [
-    {
-      href: "/",
-      label: "Home",
-      icon: Home,
-    },
-    {
-      href: "/event",
-      label: "Events",
-      icon: Calendar,
-    },
-    {
-      href: "/creamy-beetroot-soup",
-      label: "Recipes",
-      icon: Utensils,
-    },
-    {
-      href: "/esp-led-controller",
-      label: "Projects",
-      icon: Cpu,
-    },
-  ]
+	const navItems = [
+		{
+			href: '/event',
+			label: 'Event',
+			icon: Calendar,
+		},
+		{
+			href: '/creamy-beetroot-soup',
+			label: 'Recipe',
+			icon: Utensils,
+		},
+		{
+			href: '/esp-led-controller',
+			label: 'Project',
+			icon: Cpu,
+		},
+	];
 
-  return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        {navItems.map((item) => {
-          const Icon = item.icon
-          return (
-            <NavigationMenuItem key={item.href}>
-              <NavigationMenuLink
-                className={navigationMenuTriggerStyle()}
-                active={pathname === item.href}
-                onClick={() => router.push(item.href)}
-              >
-                <Icon className="mr-2 h-4 w-4" />
-                {item.label}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          )
-        })}
-      </NavigationMenuList>
-    </NavigationMenu>
-  )
-} 
+	return (
+		<NavigationMenu className="flex flex-row items-center gap-6">
+			<div className="flex flex-row items-center gap-2">
+				<Brain className="h-8 w-8 text-primary" strokeWidth={1} />
+				BrainCorp
+			</div>
+			<NavigationMenuList>
+				{navItems.map((item) => {
+					const Icon = item.icon;
+					return (
+						<NavigationMenuItem key={item.href}>
+							<NavigationMenuLink
+								className={
+									(navigationMenuTriggerStyle(),
+									'cursor-pointer, flex flex-row items-center')
+								}
+								active={pathname === item.href}
+								onClick={() => router.push(item.href)}
+							>
+								<Icon className="mr-2 h-4 w-4" />
+								{item.label}
+							</NavigationMenuLink>
+						</NavigationMenuItem>
+					);
+				})}
+			</NavigationMenuList>
+		</NavigationMenu>
+	);
+}
