@@ -34,7 +34,10 @@ export function MainNav() {
 
 	return (
 		<NavigationMenu className="flex flex-row items-center gap-6">
-			<div className="flex flex-row items-center gap-2">
+			<div
+				className="flex flex-row items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+				onClick={() => router.push('/')}
+			>
 				<Brain className="h-8 w-8 text-primary" strokeWidth={1} />
 				BrainCorp
 			</div>
@@ -44,10 +47,7 @@ export function MainNav() {
 					return (
 						<NavigationMenuItem key={item.href}>
 							<NavigationMenuLink
-								className={
-									(navigationMenuTriggerStyle(),
-									'cursor-pointer, flex flex-row items-center')
-								}
+								className={`${navigationMenuTriggerStyle()} cursor-pointer flex flex-row items-center hover:bg-accent/50 transition-colors`}
 								active={pathname === item.href}
 								onClick={() => router.push(item.href)}
 							>
