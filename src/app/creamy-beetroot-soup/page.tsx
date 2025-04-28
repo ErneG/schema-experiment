@@ -13,6 +13,7 @@ import { Calendar, Clock, Users, Utensils } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
+import { Button } from '@/components/ui/button';
 
 export default function RecipePage() {
 	const data = {
@@ -238,6 +239,64 @@ export default function RecipePage() {
 										</div>
 									</div>
 								</div>
+							</div>
+
+							{/* Festival Popup Restaurant Card */}
+							<div>
+								<h2 className="text-xl font-semibold mb-4">
+									Try It at FĀZE&apos;25
+								</h2>
+								<Card>
+									<CardHeader>
+										<CardTitle className="text-2xl">Pop-Up Kitchen</CardTitle>
+										<CardDescription>
+											Experience this traditional dish with a modern twist at
+											our festival pop-up
+										</CardDescription>
+									</CardHeader>
+									<CardContent>
+										<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+											<div className="space-y-4">
+												<div className="flex items-center gap-2">
+													<Calendar className="h-5 w-5 text-muted-foreground" />
+													<div>
+														<p className="text-sm text-muted-foreground">
+															Available
+														</p>
+														<p className="font-medium">July 18-19, 2025</p>
+													</div>
+												</div>
+												<div className="flex items-center gap-2">
+													<Clock className="h-5 w-5 text-muted-foreground" />
+													<div>
+														<p className="text-sm text-muted-foreground">
+															Serving Hours
+														</p>
+														<p className="font-medium">12:00 PM - 8:00 PM</p>
+													</div>
+												</div>
+												<p className="text-sm text-muted-foreground">
+													Our pop-up kitchen will be serving this traditional
+													dish with a modern twist, featuring locally sourced
+													ingredients and a special festival-only variation.
+												</p>
+											</div>
+											<div className="relative aspect-video rounded-lg overflow-hidden">
+												<Image
+													src="/images/cover.webp"
+													alt="Festival Pop-up Kitchen"
+													fill
+													className="object-cover"
+												/>
+											</div>
+										</div>
+										<div className="mt-6">
+											<Button asChild className="w-full">
+												<Link href="/event">Learn More About FĀZE&apos;25</Link>
+											</Button>
+										</div>
+									</CardContent>
+								</Card>
 							</div>
 						</div>
 
