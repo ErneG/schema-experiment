@@ -16,9 +16,11 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion';
-import { AlertCircle, Clock, Wrench, Package } from 'lucide-react';
+import { AlertCircle, Clock, Wrench, Package, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Head from 'next/head';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 // Utility function to parse markdown-like text
 function parseText(text: string) {
@@ -240,6 +242,85 @@ Add error handling and logging for robustness.`,
 								Feel free to modify the code and hardware setup to fit your
 								project&apos;s needs.
 							</p>
+						</div>
+
+						{/* Festival Application Section */}
+						<div className="mt-12">
+							<h2 className="text-3xl font-bold mb-8">
+								See It in Action at FĀZE&apos;25
+							</h2>
+							<Card>
+								<CardHeader>
+									<CardTitle className="text-2xl">
+										Interactive Light Installations
+									</CardTitle>
+									<CardDescription>
+										Experience this technology in a large-scale festival setting
+									</CardDescription>
+								</CardHeader>
+								<CardContent>
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+										<div className="space-y-4">
+											<div className="flex items-center gap-2">
+												<Calendar className="h-5 w-5 text-muted-foreground" />
+												<div>
+													<p className="text-sm text-muted-foreground">
+														Event Dates
+													</p>
+													<p className="font-medium">July 18-19, 2025</p>
+												</div>
+											</div>
+											<div className="flex items-center gap-2">
+												<Clock className="h-5 w-5 text-muted-foreground" />
+												<div>
+													<p className="text-sm text-muted-foreground">
+														Installation Hours
+													</p>
+													<p className="font-medium">6:00 PM - 11:00 PM</p>
+												</div>
+											</div>
+											<div className="prose prose-sm max-w-none">
+												<p>
+													At FĀZE&apos;25, we&apos;ll be using this exact
+													technology to create interactive light installations
+													throughout the festival grounds. Visitors will be able
+													to control the lighting patterns through their
+													smartphones, creating a unique and immersive
+													experience.
+												</p>
+												<p>The installations will feature:</p>
+												<ul>
+													<li>Interactive light walls responding to music</li>
+													<li>
+														Color-changing pathways through the castle ruins
+													</li>
+													<li>
+														Participatory light sculptures controlled by the
+														audience
+													</li>
+													<li>
+														Dynamic stage lighting synchronized with
+														performances
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div className="relative aspect-video rounded-lg overflow-hidden">
+											<Image
+												src="/images/cover.webp"
+												alt="Festival Light Installations"
+												fill
+												className="object-cover"
+											/>
+										</div>
+									</div>
+									<div className="mt-6">
+										<Button asChild className="w-full">
+											<Link href="/event">Learn More About FĀZE&apos;25</Link>
+										</Button>
+									</div>
+								</CardContent>
+							</Card>
 						</div>
 					</CardContent>
 				</Card>
