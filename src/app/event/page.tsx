@@ -26,10 +26,13 @@ import {
 	Car,
 	Bus,
 	Train,
+	Utensils,
+	Cpu,
 } from 'lucide-react';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function EventPage() {
 	const data = {
@@ -269,6 +272,141 @@ export default function EventPage() {
 								</TabsContent>
 							))}
 						</Tabs>
+
+						<Separator className="my-6" />
+
+						{/* Popup Restaurant Section */}
+						<div className="mb-8">
+							<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+								<Utensils className="h-5 w-5" />
+								Food & Drinks
+							</h2>
+							<Card>
+								<CardHeader>
+									<CardTitle className="text-2xl">
+										Traditional Latvian Pop-Up Kitchen
+									</CardTitle>
+									<CardDescription>
+										Experience authentic Latvian cuisine with a modern twist
+									</CardDescription>
+								</CardHeader>
+								<CardContent>
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+										<div className="space-y-4">
+											<div className="flex items-center gap-2">
+												<Clock className="h-5 w-5 text-muted-foreground" />
+												<div>
+													<p className="text-sm text-muted-foreground">
+														Serving Hours
+													</p>
+													<p className="font-medium">12:00 PM - 8:00 PM</p>
+												</div>
+											</div>
+											<div className="prose prose-sm max-w-none">
+												<p>
+													Our pop-up kitchen will be serving traditional Latvian
+													dishes with a modern twist, featuring locally sourced
+													ingredients. The menu includes our signature dish:
+												</p>
+												<ul>
+													<li>
+														Aukstā biešu zupa (Cold Beet Soup) - A refreshing
+														summer classic
+													</li>
+													<li>Modern variations of traditional recipes</li>
+													<li>Seasonal ingredients from local farmers</li>
+													<li>Vegetarian and vegan options available</li>
+												</ul>
+											</div>
+										</div>
+										<div className="relative aspect-video rounded-lg overflow-hidden">
+											<Image
+												src="/images/beetroot_soup.webp"
+												alt="Traditional Latvian Cold Beet Soup"
+												fill
+												className="object-cover"
+											/>
+										</div>
+									</div>
+									<div className="mt-6">
+										<Button asChild variant="outline" className="w-full">
+											<Link href="/creamy-beetroot-soup">View Recipe</Link>
+										</Button>
+									</div>
+								</CardContent>
+							</Card>
+						</div>
+
+						{/* Interactive Installations Section */}
+						<div className="mb-8">
+							<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+								<Cpu className="h-5 w-5" />
+								Interactive Installations
+							</h2>
+							<Card>
+								<CardHeader>
+									<CardTitle className="text-2xl">
+										Interactive Light Experience
+									</CardTitle>
+									<CardDescription>
+										Be part of the art through technology
+									</CardDescription>
+								</CardHeader>
+								<CardContent>
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+										<div className="space-y-4">
+											<div className="flex items-center gap-2">
+												<Clock className="h-5 w-5 text-muted-foreground" />
+												<div>
+													<p className="text-sm text-muted-foreground">
+														Active Hours
+													</p>
+													<p className="font-medium">6:00 PM - 11:00 PM</p>
+												</div>
+											</div>
+											<div className="prose prose-sm max-w-none">
+												<p>
+													Experience our custom-built interactive light
+													installations powered by ESP32 controllers. These
+													installations allow you to:
+												</p>
+												<ul>
+													<li>
+														Control light patterns through your smartphone
+													</li>
+													<li>
+														Create synchronized light shows with other visitors
+													</li>
+													<li>Interact with music-responsive light walls</li>
+													<li>
+														Explore color-changing pathways through the castle
+														ruins
+													</li>
+												</ul>
+												<p>
+													All installations are built using open-source
+													technology, and you can learn how to create your own
+													at home.
+												</p>
+											</div>
+										</div>
+										<div className="relative aspect-video rounded-lg overflow-hidden">
+											<Image
+												src="/images/ESP32_LED_STRIP_SCHEMA.jpg"
+												alt="ESP32 LED Control Setup"
+												fill
+												className="object-cover"
+											/>
+										</div>
+									</div>
+									<div className="mt-6">
+										<Button asChild variant="outline" className="w-full">
+											<Link href="/esp-led-controller">Learn How to Build</Link>
+										</Button>
+									</div>
+								</CardContent>
+							</Card>
+						</div>
 
 						<Separator className="my-6" />
 
