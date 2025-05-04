@@ -157,15 +157,19 @@ export default function EventPage() {
 
 	return (
 		<>
-			{/* <Head>
+			<Head>
 				<title>{data.title} – My Test Site</title>
 				<meta name="description" content={data.shortDescription} />
+				<meta property="og:title" content={data.title} />
+				<meta property="og:description" content={data.shortDescription} />
+				<meta property="og:image" content={data.image} />
+				<meta property="og:url" content={data.fullUrl} />
 				<link rel="canonical" href={data.fullUrl} />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
-			</Head> */}
+			</Head>
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				<Card className="mb-8">
 					<CardHeader>

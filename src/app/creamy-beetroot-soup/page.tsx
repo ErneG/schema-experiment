@@ -98,7 +98,7 @@ export default function RecipePage() {
 
 	return (
 		<div>
-			{/* <Head>
+			<Head>
 				<title>{data.title} – My Test Site</title>
 				<meta name="description" content={data.shortDescription} />
 				<meta property="og:title" content={data.title} />
@@ -113,7 +113,7 @@ export default function RecipePage() {
 						__html: JSON.stringify(jsonLd),
 					}}
 				/>
-			</Head> */}
+			</Head>
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				<nav className="text-sm mb-6">
 					<Link href="/" className="text-primary hover:underline">
