@@ -36,6 +36,19 @@ function parseText(text: string) {
 	});
 }
 
+export const metadata = {
+	title: 'How to Set Up an ESP32 LED Control Web Server – Festivāls FĀZE',
+	description:
+		'Step-by-step guide to flashing an ESP32 board and serving a web interface for driving LED installations.',
+	twitter: {
+		card: 'summary_large_image',
+		title: 'How to Set Up an ESP32 LED Control Web Server',
+		description:
+			'Step-by-step guide to flashing an ESP32 board and serving a web interface for driving LED installations.',
+		images: ['https://your-domain.com/howto/images/ESP32_LED_STRIP_SCHEMA.jpg'],
+	},
+};
+
 export default function HowToPage() {
 	const data = {
 		title: 'How to Set Up an ESP32 LED Control Web Server',

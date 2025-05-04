@@ -15,6 +15,20 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { Button } from '@/components/ui/button';
 
+export const metadata = {
+	title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup) – Festivāls FĀZE',
+	description:
+		'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
+
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup)',
+		description:
+			'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
+		images: ['https://your-domain.com/recipe/images/beetroot_soup.webp'],
+	},
+};
+
 export default function RecipePage() {
 	const data = {
 		title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup)',

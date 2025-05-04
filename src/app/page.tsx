@@ -10,6 +10,27 @@ import {
 } from '@/components/ui/card';
 import { Calendar, Clock, Utensils, Wrench, Music } from 'lucide-react';
 
+export const metadata = {
+	title: 'Creative Fusion – Festivāls FĀZE',
+	description:
+		'Where technology meets culture, and innovation meets tradition. Explore our world of music, food, and DIY electronics.',
+	openGraph: {
+		title: 'Creative Fusion',
+		description:
+			'Where technology meets culture, and innovation meets tradition. Explore our world of music, food, and DIY electronics.',
+		url: 'https://your-domain.com/',
+		images: [{ url: 'https://your-domain.com/images/cover.webp' }],
+		type: 'website',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Creative Fusion',
+		description:
+			'Where technology meets culture, and innovation meets tradition. Explore our world of music, food, and DIY electronics.',
+		images: ['https://your-domain.com/images/cover.webp'],
+	},
+};
+
 export default function HomePage() {
 	return (
 		<main className="container mx-auto px-4 py-8">

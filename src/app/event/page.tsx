@@ -34,6 +34,21 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
+export const metadata = {
+	title: "Festivāls FĀZE'25",
+	description:
+		'A two-day showcase of emerging Latvian music talent at the historic Zentenes Castle, featuring live performances, workshops, and immersive art installations.',
+	twitter: {
+		card: 'summary_large_image',
+		title: "Festivāls FĀZE'25",
+		description:
+			'A two-day showcase of emerging Latvian music talent at the historic Zentenes Castle, featuring live performances, workshops, and immersive art installations.',
+		images: [
+			'https://static.wixstatic.com/media/0da768_880a3209e3744cd0a96b66835a01b8c5.png/v1/crop/x_0,y_0,w_256,h_256,q_85,enc_auto/0da768_880a3209e3744cd0a96b66835a01b8c5.png',
+		],
+	},
+};
+
 export default function EventPage() {
 	const data = {
 		title: "Festivāls FĀZE'25",
@@ -279,141 +294,6 @@ export default function EventPage() {
 
 						<Separator className="my-6" />
 
-						{/* Popup Restaurant Section */}
-						<div className="mb-8">
-							<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-								<Utensils className="h-5 w-5" />
-								Food & Drinks
-							</h2>
-							<Card>
-								<CardHeader>
-									<CardTitle className="text-2xl">
-										Traditional Latvian Pop-Up Kitchen
-									</CardTitle>
-									<CardDescription>
-										Experience authentic Latvian cuisine with a modern twist
-									</CardDescription>
-								</CardHeader>
-								<CardContent>
-									<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-										<div className="space-y-4">
-											<div className="flex items-center gap-2">
-												<Clock className="h-5 w-5 text-muted-foreground" />
-												<div>
-													<p className="text-sm text-muted-foreground">
-														Serving Hours
-													</p>
-													<p className="font-medium">12:00 PM - 8:00 PM</p>
-												</div>
-											</div>
-											<div className="prose prose-sm max-w-none">
-												<p>
-													Our pop-up kitchen will be serving traditional Latvian
-													dishes with a modern twist, featuring locally sourced
-													ingredients. The menu includes our signature dish:
-												</p>
-												<ul>
-													<li>
-														Aukstā biešu zupa (Cold Beet Soup) - A refreshing
-														summer classic
-													</li>
-													<li>Modern variations of traditional recipes</li>
-													<li>Seasonal ingredients from local farmers</li>
-													<li>Vegetarian and vegan options available</li>
-												</ul>
-											</div>
-										</div>
-										<div className="relative aspect-video rounded-lg overflow-hidden">
-											<Image
-												src="/images/beetroot_soup.webp"
-												alt="Traditional Latvian Cold Beet Soup"
-												fill
-												className="object-cover"
-											/>
-										</div>
-									</div>
-									<div className="mt-6">
-										<Button asChild variant="outline" className="w-full">
-											<Link href="/creamy-beetroot-soup">View Recipe</Link>
-										</Button>
-									</div>
-								</CardContent>
-							</Card>
-						</div>
-
-						{/* Interactive Installations Section */}
-						<div className="mb-8">
-							<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-								<Cpu className="h-5 w-5" />
-								Interactive Installations
-							</h2>
-							<Card>
-								<CardHeader>
-									<CardTitle className="text-2xl">
-										Interactive Light Experience
-									</CardTitle>
-									<CardDescription>
-										Be part of the art through technology
-									</CardDescription>
-								</CardHeader>
-								<CardContent>
-									<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-										<div className="space-y-4">
-											<div className="flex items-center gap-2">
-												<Clock className="h-5 w-5 text-muted-foreground" />
-												<div>
-													<p className="text-sm text-muted-foreground">
-														Active Hours
-													</p>
-													<p className="font-medium">6:00 PM - 11:00 PM</p>
-												</div>
-											</div>
-											<div className="prose prose-sm max-w-none">
-												<p>
-													Experience our custom-built interactive light
-													installations powered by ESP32 controllers. These
-													installations allow you to:
-												</p>
-												<ul>
-													<li>
-														Control light patterns through your smartphone
-													</li>
-													<li>
-														Create synchronized light shows with other visitors
-													</li>
-													<li>Interact with music-responsive light walls</li>
-													<li>
-														Explore color-changing pathways through the castle
-														ruins
-													</li>
-												</ul>
-												<p>
-													All installations are built using open-source
-													technology, and you can learn how to create your own
-													at home.
-												</p>
-											</div>
-										</div>
-										<div className="relative aspect-video rounded-lg overflow-hidden">
-											<Image
-												src="/images/ESP32_LED_STRIP_SCHEMA.jpg"
-												alt="ESP32 LED Control Setup"
-												fill
-												className="object-cover"
-											/>
-										</div>
-									</div>
-									<div className="mt-6">
-										<Button asChild variant="outline" className="w-full">
-											<Link href="/esp-led-controller">Learn How to Build</Link>
-										</Button>
-									</div>
-								</CardContent>
-							</Card>
-						</div>
-
-						<Separator className="my-6" />
-
 						<div className="space-y-6">
 							<div>
 								<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -548,6 +428,116 @@ export default function EventPage() {
 									</p>
 								</div>
 							</div>
+						</div>
+						<Separator className="my-6" />
+
+						{/* Popup Restaurant Section */}
+						<div className="mb-8">
+							<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+								<Utensils className="h-5 w-5" />
+								Food & Drinks
+							</h2>
+							<Card>
+								<CardHeader>
+									<CardTitle className="text-2xl">
+										Traditional Latvian Pop-Up Kitchen
+									</CardTitle>
+									<CardDescription>
+										Enjoy classic Latvian dishes with a modern twist, made from
+										local ingredients. Signature dish: Aukstā biešu zupa (Cold
+										Beet Soup).
+									</CardDescription>
+								</CardHeader>
+								<CardContent>
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+										<div className="space-y-4">
+											<div className="flex items-center gap-2">
+												<Clock className="h-5 w-5 text-muted-foreground" />
+												<div>
+													<p className="text-sm text-muted-foreground">
+														Serving Hours
+													</p>
+													<p className="font-medium">12:00 PM - 8:00 PM</p>
+												</div>
+											</div>
+											<div className="prose prose-sm max-w-none">
+												<ul>
+													<li>Cold Beet Soup (Aukstā biešu zupa)</li>
+													<li>Modern takes on traditional recipes</li>
+													<li>Vegetarian & vegan options</li>
+												</ul>
+											</div>
+										</div>
+										<div className="relative aspect-video rounded-lg overflow-hidden">
+											<Image
+												src="/images/beetroot_soup.webp"
+												alt="Traditional Latvian Cold Beet Soup"
+												fill
+												className="object-cover"
+											/>
+										</div>
+									</div>
+									<div className="mt-6">
+										<Button asChild variant="outline" className="w-full">
+											<Link href="/creamy-beetroot-soup">View Recipe</Link>
+										</Button>
+									</div>
+								</CardContent>
+							</Card>
+						</div>
+
+						{/* Interactive Installations Section */}
+						<div className="mb-8">
+							<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+								<Cpu className="h-5 w-5" />
+								Interactive Installations
+							</h2>
+							<Card>
+								<CardHeader>
+									<CardTitle className="text-2xl">
+										Interactive Light Experience
+									</CardTitle>
+									<CardDescription>
+										Control custom-built light installations with your phone.
+										Explore music-reactive walls and color-changing paths.
+									</CardDescription>
+								</CardHeader>
+								<CardContent>
+									<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+										<div className="space-y-4">
+											<div className="flex items-center gap-2">
+												<Clock className="h-5 w-5 text-muted-foreground" />
+												<div>
+													<p className="text-sm text-muted-foreground">
+														Active Hours
+													</p>
+													<p className="font-medium">6:00 PM - 11:00 PM</p>
+												</div>
+											</div>
+											<div className="prose prose-sm max-w-none">
+												<ul>
+													<li>Control lights via smartphone</li>
+													<li>Music-responsive light walls</li>
+													<li>Color-changing pathways</li>
+												</ul>
+											</div>
+										</div>
+										<div className="relative aspect-video rounded-lg overflow-hidden">
+											<Image
+												src="/images/ESP32_LED_STRIP_SCHEMA.jpg"
+												alt="ESP32 LED Control Setup"
+												fill
+												className="object-cover"
+											/>
+										</div>
+									</div>
+									<div className="mt-6">
+										<Button asChild variant="outline" className="w-full">
+											<Link href="/esp-led-controller">Learn How to Build</Link>
+										</Button>
+									</div>
+								</CardContent>
+							</Card>
 						</div>
 					</CardContent>
 				</Card>
