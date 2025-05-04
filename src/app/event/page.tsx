@@ -37,12 +37,12 @@ import { Button } from '@/components/ui/button';
 export const metadata = {
 	title: "Festivāls FĀZE'25",
 	description:
-		'A two-day showcase of emerging Latvian music talent at the historic Zentenes Castle, featuring live performances, workshops, and immersive art installations.',
+		"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
 	twitter: {
 		card: 'summary_large_image',
 		title: "Festivāls FĀZE'25",
 		description:
-			'A two-day showcase of emerging Latvian music talent at the historic Zentenes Castle, featuring live performances, workshops, and immersive art installations.',
+			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
 		images: [
 			'https://static.wixstatic.com/media/0da768_880a3209e3744cd0a96b66835a01b8c5.png/v1/crop/x_0,y_0,w_256,h_256,q_85,enc_auto/0da768_880a3209e3744cd0a96b66835a01b8c5.png',
 		],
@@ -186,6 +186,16 @@ export default function EventPage() {
 				/>
 			</Head>
 			<main className="container max-w-4xl mx-auto py-8 px-4">
+				{/* SEO intro for Festivāls Fāze */}
+				<section className="mb-6">
+					<h1 className="text-4xl font-bold mb-2">Festivāls Fāze 2025</h1>
+					<p className="text-lg text-muted-foreground">
+						Festivāls Fāze is Latvia&apos;s most exciting summer festival,
+						uniting emerging music, art, and technology at Zentenes pils.
+						Explore the Festivāls Fāze 2025 lineup, schedule, and all you need
+						to know for your visit.
+					</p>
+				</section>
 				<Card className="mb-8">
 					<CardHeader>
 						<CardTitle className="text-3xl font-bold">{data.title}</CardTitle>
@@ -409,22 +419,24 @@ export default function EventPage() {
 
 							<div>
 								<h2 className="text-xl font-semibold mb-4">
-									About the Festival
+									About Festivāls Fāze
 								</h2>
 								<div className="prose prose-sm max-w-none">
 									<p>
-										Festivāls FĀZE katru gadu pulcē labākos jaunos Latvijas
-										mūziķus un māksliniekus vēsturiskajā Zentenes pilī. Mērķis
-										ir radīt intīmu, radošu vidi, kurā mūzika, māksla un
-										tehnoloģijas saplūst vienotā pieredzē. Piedāvājam gan
-										koncertus, gan interaktīvas darbnīcas, gan izstādes
-										instalācijas.
+										Festivāls Fāze (sometimes written as Faze Fest or FĀZE) is
+										an annual event in Latvia, gathering the best new musicians
+										and artists at the historic Zentenes pils. The
+										festival&apos;s mission is to create an intimate, creative
+										space where music, art, and technology blend into a unique
+										experience. Festivāls Fāze offers concerts, interactive
+										workshops, and art installations.
 									</p>
 									<p>
-										Pirmā Festivāla FĀZE notika 2021. gadā un guva lielu
-										atsaucību, piesaistot ap 500 apmeklētāju. Kopš tā laika
-										festivāls ir izaudzis gan pēc apmeklētāju skaita, gan
-										programmas daudzveidības.
+										The first Festivāls Fāze took place in 2021 and quickly
+										became a highlight of the Latvian summer. Since then,
+										Festivāls Fāze has grown in both attendance and program
+										diversity, attracting visitors from across the country and
+										beyond.
 									</p>
 								</div>
 							</div>
