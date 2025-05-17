@@ -41,24 +41,24 @@ export const metadata = {
 export default function AboutUsPage() {
 	const team = [
 		{
-			name: 'Anna Bērziņa',
+			name: 'Ernests Dane',
 			role: 'Founder & Creative Director',
-			image: '/images/team/anna.jpg',
-			initials: 'AB',
+			image: '/images/team/ernests.jpg',
+			initials: 'ED',
 			bio: 'Passionate about creating immersive music experiences and bringing together emerging artists.',
 		},
 		{
-			name: 'Jānis Kalniņš',
+			name: 'Jorens Štekeļs',
 			role: 'Technical Director',
-			image: '/images/team/janis.jpg',
-			initials: 'JK',
+			image: '/images/team/jorens.jpg',
+			initials: 'JS',
 			bio: 'Expert in sound engineering and interactive installations.',
 		},
 		{
-			name: 'Līga Ozola',
+			name: 'Mihails Daņilovs',
 			role: 'Event Coordinator',
-			image: '/images/team/liga.jpg',
-			initials: 'LO',
+			image: '/images/team/mihails.jpg',
+			initials: 'MD',
 			bio: 'Dedicated to crafting seamless event experiences and artist relations.',
 		},
 	];
