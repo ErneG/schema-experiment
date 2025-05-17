@@ -55,6 +55,7 @@ export function MainNav() {
 								className={`${navigationMenuTriggerStyle()} cursor-pointer flex flex-row items-center hover:bg-accent/50 transition-colors`}
 								active={pathname === item.href}
 								onClick={() => router.push(item.href)}
+								rel="nofollow"
 							>
 								<Icon className="mr-2 h-4 w-4" />
 								{item.label}
