@@ -34,9 +34,9 @@ export default function RecipePage() {
 		title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup)',
 		shortDescription:
 			'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
-		fullUrl: 'https://your-domain.com/recipe',
+		fullUrl: 'https://ernests.dev/creamy-beetroot-soup',
 		image: '/images/beetroot_soup.webp',
-		author: { name: 'Your Name', url: 'https://your-domain.com/about' },
+		author: { name: 'Ernests Dane', url: 'https://ernests.dev/about-us' },
 		datePublished: '2025-04-22',
 		prepTime: 'PT20M',
 		cookTime: 'PT30M',
