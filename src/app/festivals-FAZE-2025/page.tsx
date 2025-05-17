@@ -43,8 +43,19 @@ export const metadata = {
 		title: "Festivāls FĀZE'25",
 		description:
 			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
+		images: ['/cover.webp'],
+	},
+	openGraph: {
+		title: "Festivāls FĀZE'25",
+		description:
+			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
 		images: [
-			'https://static.wixstatic.com/media/0da768_880a3209e3744cd0a96b66835a01b8c5.png/v1/crop/x_0,y_0,w_256,h_256,q_85,enc_auto/0da768_880a3209e3744cd0a96b66835a01b8c5.png',
+			{
+				url: '/cover.webp',
+				width: 1200,
+				height: 630,
+				alt: 'Festivāls FĀZE 2025',
+			},
 		],
 	},
 };
@@ -55,8 +66,7 @@ export default function EventPage() {
 		shortDescription:
 			'A two-day showcase of emerging Latvian music talent at the historic Zentenes Castle, featuring live performances, workshops, and immersive art installations.',
 		fullUrl: 'https://your-domain.com/event',
-		image:
-			'https://static.wixstatic.com/media/0da768_880a3209e3744cd0a96b66835a01b8c5.png/v1/crop/x_0,y_0,w_256,h_256,q_85,enc_auto/0da768_880a3209e3744cd0a96b66835a01b8c5.png',
+		image: '/cover.webp',
 		startDate: '2025-07-18T15:00',
 		endDate: '2025-07-19T23:00',
 		location: {
@@ -207,7 +217,7 @@ export default function EventPage() {
 						<div className="relative aspect-video w-full mb-6 rounded-lg overflow-hidden">
 							<Image
 								src="/images/cover.webp"
-								alt="Woman playing guitar on stage"
+								alt="Festivāls FĀZE 2025 - Live music performance at Zentenes Castle featuring emerging Latvian artists and interactive art installations"
 								fill
 								className="object-cover"
 								priority
