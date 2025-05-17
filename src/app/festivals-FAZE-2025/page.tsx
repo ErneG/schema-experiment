@@ -267,6 +267,7 @@ export default function EventPage() {
 										<Link
 											href={data.organizer.url}
 											className="font-medium text-primary hover:underline"
+											rel="nofollow"
 										>
 											{data.organizer.name}
 										</Link>
@@ -327,7 +328,7 @@ export default function EventPage() {
 											href={offer.url}
 											className="text-sm text-primary hover:underline"
 											target="_blank"
-											rel="noopener noreferrer"
+											rel="noopener noreferrer nofollow"
 										>
 											<Card>
 												<CardContent className="p-4">
@@ -389,7 +390,7 @@ export default function EventPage() {
 															href="https://1188.lv"
 															className="text-primary hover:underline"
 															target="_blank"
-															rel="noopener noreferrer"
+															rel="noopener noreferrer nofollow"
 														>
 															1188.lv
 														</Link>
@@ -415,7 +416,7 @@ export default function EventPage() {
 															href="https://1188.lv"
 															className="text-primary hover:underline"
 															target="_blank"
-															rel="noopener noreferrer"
+															rel="noopener noreferrer nofollow"
 														>
 															1188.lv
 														</Link>
@@ -563,6 +564,19 @@ export default function EventPage() {
 						</div>
 					</CardContent>
 				</Card>
+				<Separator className="my-6" />
+				<div className="text-center text-sm text-muted-foreground">
+					<p>
+						We have no affiliation with{' '}
+						<Link
+							href="https://www.fazeevents.lv"
+							rel="nofollow"
+							className="text-primary hover:underline"
+						>
+							Fāze Events
+						</Link>
+					</p>
+				</div>
 			</main>
 		</>
 	);
