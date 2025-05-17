@@ -454,6 +454,19 @@ export default function EventPage() {
 						</div>
 						<Separator className="my-6" />
 
+						{/* Main Stage Image */}
+						<div className="mb-8">
+							<div className="relative aspect-video w-full rounded-lg overflow-hidden">
+								<Image
+									src="/images/faze-fest-main-stage.avif"
+									alt="Embark (music band) performing live on the main stage at Festivāls Fāze, Zentenes pils"
+									fill
+									className="object-cover"
+									priority
+								/>
+							</div>
+						</div>
+
 						{/* Popup Restaurant Section */}
 						<div className="mb-8">
 							<h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
