@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { Calendar, Utensils, Cpu, Brain } from 'lucide-react';
+import { Calendar, Utensils, Cpu, Brain, Users } from 'lucide-react';
 import {
 	NavigationMenu,
 	NavigationMenuItem,
@@ -29,6 +29,11 @@ export function MainNav() {
 			href: '/esp-led-controller',
 			label: 'Project',
 			icon: Cpu,
+		},
+		{
+			href: '/about-us',
+			label: 'About Us',
+			icon: Users,
 		},
 	];
 
