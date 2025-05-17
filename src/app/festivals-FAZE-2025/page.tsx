@@ -159,6 +159,11 @@ export default function EventPage() {
 				postalCode: data.location.address.postalCode,
 				addressCountry: data.location.address.addressCountry,
 			},
+			geo: {
+				'@type': 'GeoCoordinates',
+				latitude: '57.1234',
+				longitude: '23.1234',
+			},
 		},
 		image: [data.image],
 		description: data.shortDescription,
@@ -172,11 +177,90 @@ export default function EventPage() {
 			price: offer.price,
 			priceCurrency: offer.currency,
 			availability: `https://schema.org/${offer.availability}`,
+			validFrom: '2025-01-01T00:00:00+02:00',
+			priceValidUntil: '2025-07-17T23:59:59+02:00',
 		})),
 		organizer: {
 			'@type': 'Organization',
 			name: data.organizer.name,
 			url: data.organizer.url,
+			logo: {
+				'@type': 'ImageObject',
+				url: 'https://ernests.dev/logo.png',
+			},
+		},
+		performer: [
+			{
+				'@type': 'MusicGroup',
+				name: 'Embark',
+				url: 'https://www.instagram.com/embark.band/',
+			},
+			{
+				'@type': 'MusicGroup',
+				name: "The Tu'n'es",
+				url: 'https://www.instagram.com/thetunesofficial/',
+			},
+			{
+				'@type': 'MusicGroup',
+				name: 'Bukte',
+				url: 'https://www.instagram.com/bukteofficial/',
+			},
+		],
+		maximumAttendeeCapacity: 2000,
+		remainingAttendeeCapacity: 1500,
+		eventSchedule: data.schedule.map((day) => ({
+			'@type': 'Schedule',
+			startDate: day.date,
+			endDate: day.date,
+			byDay: new Date(day.date).toLocaleDateString('en-US', {
+				weekday: 'long',
+			}),
+			event: day.events.map((evt) => ({
+				'@type': 'Event',
+				name: evt.title,
+				startTime: `${day.date}T${evt.time}:00+02:00`,
+				location: evt.stage
+					? {
+							'@type': 'Place',
+							name: evt.stage,
+					  }
+					: undefined,
+			})),
+		})),
+		subEvent: data.schedule.flatMap((day) =>
+			day.events.map((evt) => ({
+				'@type': 'Event',
+				name: evt.title,
+				startDate: `${day.date}T${evt.time}:00+02:00`,
+				location: evt.stage
+					? {
+							'@type': 'Place',
+							name: evt.stage,
+					  }
+					: undefined,
+			}))
+		),
+		keywords: [
+			'music festival',
+			'Latvian music',
+			'live music',
+			'Zentenes pils',
+			'summer festival',
+		],
+		audience: {
+			'@type': 'Audience',
+			audienceType: 'Music Lovers',
+		},
+		typicalAgeRange: '18-45',
+		doorTime: '14:00',
+		previousStartDate: '2024-07-20',
+		maximumVirtualAttendeeCapacity: 0,
+		isAccessibleForFree: false,
+		eventType: ['Music Festival', 'Cultural Event'],
+		sponsor: {
+			'@type': 'Organization',
+			name: 'Brain Corp',
+			url: 'https://ernests.dev',
 		},
 	};
 
