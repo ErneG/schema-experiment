@@ -207,7 +207,7 @@ export default function EventPage() {
 						<div className="relative aspect-video w-full mb-6 rounded-lg overflow-hidden">
 							<Image
 								src="/images/cover.webp"
-								alt="Festivāls FĀZE'25 banner"
+								alt="Woman playing guitar on stage"
 								fill
 								className="object-cover"
 								priority
