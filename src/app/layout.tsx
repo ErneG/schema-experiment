@@ -55,7 +55,7 @@ export default function RootLayout({
 				{/* </main> */}
 				<footer className="border-t py-4">
 					<div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-						© {new Date().getFullYear()} Your Site Name. All rights reserved.
+						© {new Date().getFullYear()} Brain Corp. All rights reserved.
 					</div>
 				</footer>
 			</body>
