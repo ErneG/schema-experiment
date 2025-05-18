@@ -60,6 +60,213 @@ export const metadata = {
 	},
 };
 
+// Move jsonLd outside of the component to be accessible by generateMetadata
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Event',
+	name: "Festivāls FĀZE'25",
+	startDate: '2025-07-18T15:00',
+	endDate: '2025-07-19T23:00',
+	eventStatus: 'https://schema.org/EventScheduled',
+	eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+	location: {
+		'@type': 'Place',
+		name: 'Zentenes pils',
+		address: {
+			'@type': 'PostalAddress',
+			streetAddress: 'Zentenes pils 1',
+			addressLocality: 'Zentene',
+			addressRegion: 'Tukuma novads',
+			postalCode: '3124',
+			addressCountry: 'LV',
+		},
+		geo: {
+			'@type': 'GeoCoordinates',
+			latitude: '57.1234',
+			longitude: '23.1234',
+		},
+	},
+	image: ['/cover.webp'],
+	description:
+		'A two-day showcase of emerging Latvian music talent at the historic Zentenes Castle, featuring live performances, workshops, and immersive art installations.',
+	workFeatured: [
+		'Gates Open',
+		'Lokāli DJ Set',
+		'Spēlētājs Trio',
+		'Indie Folk Collective',
+		'Midnight Soundscape',
+	],
+	offers: [
+		{
+			'@type': 'Offer',
+			name: 'Early Bird Ticket',
+			url: 'https://www.fazeevents.lv/event-details/faze25',
+			price: '20.00',
+			priceCurrency: 'EUR',
+			availability: 'https://schema.org/InStock',
+			validFrom: '2025-01-01T00:00:00+02:00',
+			priceValidUntil: '2025-07-17T23:59:59+02:00',
+		},
+		{
+			'@type': 'Offer',
+			name: 'Two-Day Pass',
+			url: 'https://www.fazeevents.lv/event-details/faze25',
+			price: '30.00',
+			priceCurrency: 'EUR',
+			availability: 'https://schema.org/InStock',
+			validFrom: '2025-01-01T00:00:00+02:00',
+			priceValidUntil: '2025-07-17T23:59:59+02:00',
+		},
+	],
+	organizer: {
+		'@type': 'Organization',
+		name: 'Biedrība FĀZE events',
+		url: 'https://www.fazeevents.lv',
+		logo: {
+			'@type': 'ImageObject',
+			url: 'https://ernests.dev/logo.png',
+		},
+	},
+	performer: [
+		{
+			'@type': 'MusicGroup',
+			name: 'Embark',
+			url: 'https://www.instagram.com/embark.band/',
+		},
+		{
+			'@type': 'MusicGroup',
+			name: "The Tu'n'es",
+			url: 'https://www.instagram.com/thetunesofficial/',
+		},
+		{
+			'@type': 'MusicGroup',
+			name: 'Bukte',
+			url: 'https://www.instagram.com/bukteofficial/',
+		},
+	],
+	maximumAttendeeCapacity: 2000,
+	remainingAttendeeCapacity: 1500,
+	eventSchedule: [
+		{
+			'@type': 'Schedule',
+			startDate: '2025-07-18',
+			endDate: '2025-07-18',
+			byDay: 'Friday',
+			event: [
+				{
+					'@type': 'Event',
+					name: 'Gates Open',
+					startTime: '2025-07-18T15:00:00+02:00',
+					location: { '@type': 'Place', name: 'Main Stage' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Lokāli DJ Set',
+					startTime: '2025-07-18T16:00:00+02:00',
+					location: { '@type': 'Place', name: 'Main Stage' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Spēlētājs Trio',
+					startTime: '2025-07-18T17:30:00+02:00',
+					location: { '@type': 'Place', name: 'Castle Lawn' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Indie Folk Collective',
+					startTime: '2025-07-18T19:00:00+02:00',
+					location: { '@type': 'Place', name: 'Main Stage' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Midnight Soundscape',
+					startTime: '2025-07-18T21:00:00+02:00',
+					location: { '@type': 'Place', name: 'Castle Ruins' },
+				},
+			],
+		},
+		{
+			'@type': 'Schedule',
+			startDate: '2025-07-19',
+			endDate: '2025-07-19',
+			byDay: 'Saturday',
+			event: [
+				{
+					'@type': 'Event',
+					name: 'Workshops: Beatmaking & DIY Synth',
+					startTime: '2025-07-19T12:00:00+02:00',
+					location: { '@type': 'Place', name: 'Workshop Tent' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Panel: Music Production Tips',
+					startTime: '2025-07-19T14:00:00+02:00',
+					location: { '@type': 'Place', name: 'Workshop Tent' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Indie Rock Showcase',
+					startTime: '2025-07-19T16:00:00+02:00',
+					location: { '@type': 'Place', name: 'Main Stage' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Electronic Live Act',
+					startTime: '2025-07-19T18:30:00+02:00',
+					location: { '@type': 'Place', name: 'Castle Lawn' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Headliner: Alt-Rock Sensation',
+					startTime: '2025-07-19T20:00:00+02:00',
+					location: { '@type': 'Place', name: 'Main Stage' },
+				},
+				{
+					'@type': 'Event',
+					name: 'Closing DJ Ceremony',
+					startTime: '2025-07-19T22:00:00+02:00',
+					location: { '@type': 'Place', name: 'Main Stage' },
+				},
+			],
+		},
+	],
+	subEvent: [
+		'Gates Open',
+		'Lokāli DJ Set',
+		'Spēlētājs Trio',
+		'Indie Folk Collective',
+		'Midnight Soundscape',
+		'Workshops: Beatmaking & DIY Synth',
+		'Panel: Music Production Tips',
+		'Indie Rock Showcase',
+		'Electronic Live Act',
+		'Headliner: Alt-Rock Sensation',
+		'Closing DJ Ceremony',
+	],
+	keywords: [
+		'music festival',
+		'Latvian music',
+		'live music',
+		'Zentenes pils',
+		'summer festival',
+	],
+	audience: {
+		'@type': 'Audience',
+		audienceType: 'Music Lovers',
+	},
+	typicalAgeRange: '18-45',
+	doorTime: '14:00',
+	previousStartDate: '2024-07-20',
+	maximumVirtualAttendeeCapacity: 0,
+	isAccessibleForFree: false,
+	eventType: ['Music Festival', 'Cultural Event'],
+	sponsor: {
+		'@type': 'Organization',
+		name: 'Brain Corp',
+		url: 'https://ernests.dev',
+	},
+};
+
 export default function EventPage() {
 	const data = {
 		title: "Festivāls FĀZE'25",
@@ -140,130 +347,6 @@ export default function EventPage() {
 		},
 	};
 
-	const jsonLd = {
-		'@context': 'https://schema.org',
-		'@type': 'Event',
-		name: data.title,
-		startDate: data.startDate,
-		endDate: data.endDate,
-		eventStatus: 'https://schema.org/EventScheduled',
-		eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-		location: {
-			'@type': 'Place',
-			name: data.location.name,
-			address: {
-				'@type': 'PostalAddress',
-				streetAddress: data.location.address.streetAddress,
-				addressLocality: data.location.address.addressLocality,
-				addressRegion: data.location.address.addressRegion,
-				postalCode: data.location.address.postalCode,
-				addressCountry: data.location.address.addressCountry,
-			},
-			geo: {
-				'@type': 'GeoCoordinates',
-				latitude: '57.1234',
-				longitude: '23.1234',
-			},
-		},
-		image: [data.image],
-		description: data.shortDescription,
-		workFeatured: data.schedule.flatMap((day) =>
-			day.events.map((evt) => evt.title)
-		),
-		offers: data.offers.map((offer) => ({
-			'@type': 'Offer',
-			name: offer.name,
-			url: offer.url,
-			price: offer.price,
-			priceCurrency: offer.currency,
-			availability: `https://schema.org/${offer.availability}`,
-			validFrom: '2025-01-01T00:00:00+02:00',
-			priceValidUntil: '2025-07-17T23:59:59+02:00',
-		})),
-		organizer: {
-			'@type': 'Organization',
-			name: data.organizer.name,
-			url: data.organizer.url,
-			logo: {
-				'@type': 'ImageObject',
-				url: 'https://ernests.dev/logo.png',
-			},
-		},
-		performer: [
-			{
-				'@type': 'MusicGroup',
-				name: 'Embark',
-				url: 'https://www.instagram.com/embark.band/',
-			},
-			{
-				'@type': 'MusicGroup',
-				name: "The Tu'n'es",
-				url: 'https://www.instagram.com/thetunesofficial/',
-			},
-			{
-				'@type': 'MusicGroup',
-				name: 'Bukte',
-				url: 'https://www.instagram.com/bukteofficial/',
-			},
-		],
-		maximumAttendeeCapacity: 2000,
-		remainingAttendeeCapacity: 1500,
-		eventSchedule: data.schedule.map((day) => ({
-			'@type': 'Schedule',
-			startDate: day.date,
-			endDate: day.date,
-			byDay: new Date(day.date).toLocaleDateString('en-US', {
-				weekday: 'long',
-			}),
-			event: day.events.map((evt) => ({
-				'@type': 'Event',
-				name: evt.title,
-				startTime: `${day.date}T${evt.time}:00+02:00`,
-				location: evt.stage
-					? {
-							'@type': 'Place',
-							name: evt.stage,
-					  }
-					: undefined,
-			})),
-		})),
-		subEvent: data.schedule.flatMap((day) =>
-			day.events.map((evt) => ({
-				'@type': 'Event',
-				name: evt.title,
-				startDate: `${day.date}T${evt.time}:00+02:00`,
-				location: evt.stage
-					? {
-							'@type': 'Place',
-							name: evt.stage,
-					  }
-					: undefined,
-			}))
-		),
-		keywords: [
-			'music festival',
-			'Latvian music',
-			'live music',
-			'Zentenes pils',
-			'summer festival',
-		],
-		audience: {
-			'@type': 'Audience',
-			audienceType: 'Music Lovers',
-		},
-		typicalAgeRange: '18-45',
-		doorTime: '14:00',
-		previousStartDate: '2024-07-20',
-		maximumVirtualAttendeeCapacity: 0,
-		isAccessibleForFree: false,
-		eventType: ['Music Festival', 'Cultural Event'],
-		sponsor: {
-			'@type': 'Organization',
-			name: 'Brain Corp',
-			url: 'https://ernests.dev',
-		},
-	};
-
 	return (
 		<>
 			<Head>
@@ -274,11 +357,11 @@ export default function EventPage() {
 				<meta property="og:image" content={data.image} />
 				<meta property="og:url" content={data.fullUrl} />
 				<link rel="canonical" href={data.fullUrl} />
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-				/>
 			</Head>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				{/* SEO intro for Festivāls Fāze */}
 				<section className="mb-6">
@@ -677,4 +760,38 @@ export default function EventPage() {
 			</main>
 		</>
 	);
+}
+
+export async function generateMetadata() {
+	const data = {
+		title: "Festivāls FĀZE'25",
+		description:
+			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
+	};
+
+	return {
+		title: data.title,
+		description: data.description,
+		openGraph: {
+			title: data.title,
+			description: data.description,
+			images: [
+				{
+					url: '/cover.webp',
+					width: 1200,
+					height: 630,
+					alt: 'Festivāls FĀZE 2025',
+				},
+			],
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: data.title,
+			description: data.description,
+			images: ['/cover.webp'],
+		},
+		other: {
+			'application-ld+json': JSON.stringify(jsonLd),
+		},
+	};
 }
