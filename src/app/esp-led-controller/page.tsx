@@ -21,6 +21,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { HowTo, WithContext } from 'schema-dts';
 
 // Utility function to parse markdown-like text
 function parseText(text: string) {
@@ -36,6 +37,92 @@ function parseText(text: string) {
 	});
 }
 
+const data = {
+	title: 'How to Set Up an ESP32 LED Control Web Server',
+	shortDescription:
+		'Step-by-step guide to flashing an ESP32 board and serving a web interface for driving LED installations.',
+	fullUrl: 'https://ernests.dev/esp-led-controller',
+	image: 'https://ernests.dev/images/ESP32_LED_STRIP_SCHEMA.jpg',
+	datePublished: '2025-05-22',
+	totalTime: 'PT30M',
+	supplies: [
+		'1× XL0401 diode',
+		'1× Type C PD trigger board',
+		'2× DC buck converter 2A',
+		'1× MOSFET switch 15A',
+		'1× ESP32 board',
+		'1× 3S BMS (Battery Management System)',
+		'3× 18650 Li‑ion cells',
+	],
+	tools: [
+		'Arduino IDE',
+		'USB cable',
+		'ESP32 USB-to-UART driver (e.g. Silicon Labs CP210x)',
+	],
+	steps: [
+		{
+			name: 'Install & Configure Arduino IDE',
+			text: `Download and install the Arduino IDE from the [Arduino website](https://www.arduino.cc/en/software).  
+Open **Tools > Board: "xxx" > Boards Manager...**, search for "ESP32" and install the Espressif Systems package.  
+Select **Tools > Board > ESP32 Dev Module**.`,
+		},
+		{
+			name: 'Install Required Libraries',
+			text: `In the Arduino IDE, go to **Tools > Manage Libraries...** and install the following libraries:  
+- WiFi.h  
+- ESPAsyncWebServer.h  
+- FastLED.h`,
+		},
+		{
+			name: 'Install USB-to-UART Driver',
+			text: `If your computer does not detect the ESP32 as a serial device, download and install the CP210x or CH340 driver from the manufacturer's site: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers.`,
+		},
+		{
+			name: 'Connect & Flash the ESP32',
+			text: `Connect your ESP32 to the computer via USB.  
+Open **main.ino** in the Arduino IDE. Replace \`THE_NAME_OF_YOUR_WIFI_NETWORK\` and \`THE_PASSWORD_OF_YOUR_WIFI_NETWORK\` with your WiFi credentials.  
+Click the Upload button to compile and flash your board.`,
+		},
+		{
+			name: 'Post-Flashing & AP Setup',
+			text: `After flashing, disconnect and reconnect the ESP32.  
+It will create an access point with the SSID and password specified in the code. Connect your device to this AP and navigate to **http://192.168.4.1** in a web browser to access the LED control interface.`,
+		},
+		{
+			name: 'Code Customization & Tips',
+			text: `- Adjust **LED_PIN**, **NUM_LEDS**, **LED_TYPE**, and **COLOR_ORDER** to match your hardware.  
+- Do not power the LED strip directly from the ESP32; use a separate 5V power source.  
+- To connect to an existing WiFi network instead of AP mode, replace \`WiFi.softAP(ssid, password);\` with \`WiFi.begin(ssid, password);\`.`,
+		},
+		{
+			name: 'Advanced Considerations',
+			text: `For more complex interfaces, serve HTML from SPIFFS or LittleFS.  
+Add error handling and logging for robustness.`,
+		},
+	],
+};
+
+const jsonLd: WithContext<HowTo> = {
+	'@context': 'https://schema.org',
+	'@type': 'HowTo',
+	name: data.title,
+	description: data.shortDescription,
+	totalTime: data.totalTime,
+	image: [data.image],
+	datePublished: data.datePublished,
+	supply: data.supplies.map((item) => ({
+		'@type': 'HowToSupply',
+		name: item,
+	})),
+	tool: data.tools.map((item) => ({ '@type': 'HowToTool', name: item })),
+	step: data.steps.map((step, i) => ({
+		'@type': 'HowToStep',
+		name: step.name,
+		text: step.text,
+		position: i + 1,
+	})),
+};
+
 export const metadata = {
 	title: 'How to Set Up an ESP32 LED Control Web Server – Festivāls FĀZE',
 	description:
@@ -45,97 +132,27 @@ export const metadata = {
 		title: 'How to Set Up an ESP32 LED Control Web Server',
 		description:
 			'Step-by-step guide to flashing an ESP32 board and serving a web interface for driving LED installations.',
-		images: ['https://your-domain.com/howto/images/ESP32_LED_STRIP_SCHEMA.jpg'],
+		images: ['https://ernests.dev/images/ESP32_LED_STRIP_SCHEMA.jpg'],
+	},
+	openGraph: {
+		title: 'How to Set Up an ESP32 LED Control Web Server',
+		description:
+			'Step-by-step guide to flashing an ESP32 board and serving a web interface for driving LED installations.',
+		images: [
+			{
+				url: 'https://ernests.dev/images/ESP32_LED_STRIP_SCHEMA.jpg',
+				width: 1200,
+				height: 630,
+				alt: 'ESP32 LED Control Setup',
+			},
+		],
+	},
+	other: {
+		'application-ld+json': JSON.stringify(jsonLd),
 	},
 };
 
 export default function HowToPage() {
-	const data = {
-		title: 'How to Set Up an ESP32 LED Control Web Server',
-		shortDescription:
-			'Step-by-step guide to flashing an ESP32 board and serving a web interface for driving LED installations.',
-		fullUrl: 'https://your-domain.com/howto',
-		image: '/images/ESP32_LED_STRIP_SCHEMA.jpg',
-		datePublished: '2025-04-22',
-		totalTime: 'PT30M',
-		supplies: [
-			'1× XL0401 diode',
-			'1× Type C PD trigger board',
-			'2× DC buck converter 2A',
-			'1× MOSFET switch 15A',
-			'1× ESP32 board',
-			'1× 3S BMS (Battery Management System)',
-			'3× 18650 Li‑ion cells',
-		],
-		tools: [
-			'Arduino IDE',
-			'USB cable',
-			'ESP32 USB-to-UART driver (e.g. Silicon Labs CP210x)',
-		],
-		steps: [
-			{
-				name: 'Install & Configure Arduino IDE',
-				text: `Download and install the Arduino IDE from the [Arduino website](https://www.arduino.cc/en/software).  
-Open **Tools > Board: "xxx" > Boards Manager...**, search for "ESP32" and install the Espressif Systems package.  
-Select **Tools > Board > ESP32 Dev Module**.`,
-			},
-			{
-				name: 'Install Required Libraries',
-				text: `In the Arduino IDE, go to **Tools > Manage Libraries...** and install the following libraries:  
-- WiFi.h  
-- ESPAsyncWebServer.h  
-- FastLED.h`,
-			},
-			{
-				name: 'Install USB-to-UART Driver',
-				text: `If your computer does not detect the ESP32 as a serial device, download and install the CP210x or CH340 driver from the manufacturer's site: https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers.`,
-			},
-			{
-				name: 'Connect & Flash the ESP32',
-				text: `Connect your ESP32 to the computer via USB.  
-Open **main.ino** in the Arduino IDE. Replace \`THE_NAME_OF_YOUR_WIFI_NETWORK\` and \`THE_PASSWORD_OF_YOUR_WIFI_NETWORK\` with your WiFi credentials.  
-Click the Upload button to compile and flash your board.`,
-			},
-			{
-				name: 'Post-Flashing & AP Setup',
-				text: `After flashing, disconnect and reconnect the ESP32.  
-It will create an access point with the SSID and password specified in the code. Connect your device to this AP and navigate to **http://192.168.4.1** in a web browser to access the LED control interface.`,
-			},
-			{
-				name: 'Code Customization & Tips',
-				text: `- Adjust **LED_PIN**, **NUM_LEDS**, **LED_TYPE**, and **COLOR_ORDER** to match your hardware.  
-- Do not power the LED strip directly from the ESP32; use a separate 5V power source.  
-- To connect to an existing WiFi network instead of AP mode, replace \`WiFi.softAP(ssid, password);\` with \`WiFi.begin(ssid, password);\`.`,
-			},
-			{
-				name: 'Advanced Considerations',
-				text: `For more complex interfaces, serve HTML from SPIFFS or LittleFS.  
-Add error handling and logging for robustness.`,
-			},
-		],
-	};
-
-	const jsonLd = {
-		'@context': 'https://schema.org/',
-		'@type': 'HowTo',
-		name: data.title,
-		description: data.shortDescription,
-		totalTime: data.totalTime,
-		image: data.image,
-		datePublished: data.datePublished,
-		supply: data.supplies.map((item) => ({
-			'@type': 'HowToSupply',
-			name: item,
-		})),
-		tool: data.tools.map((item) => ({ '@type': 'HowToTool', name: item })),
-		step: data.steps.map((step, i) => ({
-			'@type': 'HowToStep',
-			name: step.name,
-			text: step.text,
-			position: i + 1,
-		})),
-	};
-
 	return (
 		<>
 			<Head>

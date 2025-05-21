@@ -33,6 +33,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Event, WithContext } from 'schema-dts';
 
 export const metadata = {
 	title: "Festivāls FĀZE'25",
@@ -61,7 +62,7 @@ export const metadata = {
 };
 
 // Move jsonLd outside of the component to be accessible by generateMetadata
-const jsonLd = {
+const jsonLd: WithContext<Event> = {
 	'@context': 'https://schema.org',
 	'@type': 'Event',
 	name: "Festivāls FĀZE'25",
@@ -86,15 +87,35 @@ const jsonLd = {
 			longitude: '23.1234',
 		},
 	},
-	image: ['/cover.webp'],
+	image: [
+		'https://ernests.dev/images/cover.webp',
+		'https://ernests.dev/images/faze-fest-main-stage.avif',
+		'https://ernests.dev/images/beetroot_soup.webp',
+		'https://ernests.dev/images/ESP32_LED_STRIP_SCHEMA.jpg',
+	],
 	description:
 		'A two-day showcase of emerging Latvian music talent at the historic Zentenes Castle, featuring live performances, workshops, and immersive art installations.',
 	workFeatured: [
-		'Gates Open',
-		'Lokāli DJ Set',
-		'Spēlētājs Trio',
-		'Indie Folk Collective',
-		'Midnight Soundscape',
+		{
+			'@type': 'CreativeWork',
+			name: 'Gates Open',
+		},
+		{
+			'@type': 'CreativeWork',
+			name: 'Lokāli DJ Set',
+		},
+		{
+			'@type': 'CreativeWork',
+			name: 'Spēlētājs Trio',
+		},
+		{
+			'@type': 'CreativeWork',
+			name: 'Indie Folk Collective',
+		},
+		{
+			'@type': 'CreativeWork',
+			name: 'Midnight Soundscape',
+		},
 	],
 	offers: [
 		{
@@ -152,96 +173,85 @@ const jsonLd = {
 			startDate: '2025-07-18',
 			endDate: '2025-07-18',
 			byDay: 'Friday',
-			event: [
-				{
-					'@type': 'Event',
-					name: 'Gates Open',
-					startTime: '2025-07-18T15:00:00+02:00',
-					location: { '@type': 'Place', name: 'Main Stage' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Lokāli DJ Set',
-					startTime: '2025-07-18T16:00:00+02:00',
-					location: { '@type': 'Place', name: 'Main Stage' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Spēlētājs Trio',
-					startTime: '2025-07-18T17:30:00+02:00',
-					location: { '@type': 'Place', name: 'Castle Lawn' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Indie Folk Collective',
-					startTime: '2025-07-18T19:00:00+02:00',
-					location: { '@type': 'Place', name: 'Main Stage' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Midnight Soundscape',
-					startTime: '2025-07-18T21:00:00+02:00',
-					location: { '@type': 'Place', name: 'Castle Ruins' },
-				},
-			],
+			startTime: '15:00:00+02:00',
+			endTime: '23:00:00+02:00',
 		},
 		{
 			'@type': 'Schedule',
 			startDate: '2025-07-19',
 			endDate: '2025-07-19',
 			byDay: 'Saturday',
-			event: [
-				{
-					'@type': 'Event',
-					name: 'Workshops: Beatmaking & DIY Synth',
-					startTime: '2025-07-19T12:00:00+02:00',
-					location: { '@type': 'Place', name: 'Workshop Tent' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Panel: Music Production Tips',
-					startTime: '2025-07-19T14:00:00+02:00',
-					location: { '@type': 'Place', name: 'Workshop Tent' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Indie Rock Showcase',
-					startTime: '2025-07-19T16:00:00+02:00',
-					location: { '@type': 'Place', name: 'Main Stage' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Electronic Live Act',
-					startTime: '2025-07-19T18:30:00+02:00',
-					location: { '@type': 'Place', name: 'Castle Lawn' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Headliner: Alt-Rock Sensation',
-					startTime: '2025-07-19T20:00:00+02:00',
-					location: { '@type': 'Place', name: 'Main Stage' },
-				},
-				{
-					'@type': 'Event',
-					name: 'Closing DJ Ceremony',
-					startTime: '2025-07-19T22:00:00+02:00',
-					location: { '@type': 'Place', name: 'Main Stage' },
-				},
-			],
+			startTime: '12:00:00+02:00',
+			endTime: '22:00:00+02:00',
 		},
 	],
 	subEvent: [
-		'Gates Open',
-		'Lokāli DJ Set',
-		'Spēlētājs Trio',
-		'Indie Folk Collective',
-		'Midnight Soundscape',
-		'Workshops: Beatmaking & DIY Synth',
-		'Panel: Music Production Tips',
-		'Indie Rock Showcase',
-		'Electronic Live Act',
-		'Headliner: Alt-Rock Sensation',
-		'Closing DJ Ceremony',
+		{
+			'@type': 'Event',
+			name: 'Gates Open',
+			startDate: '2025-07-18T15:00:00+02:00',
+			location: { '@type': 'Place', name: 'Main Stage' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Lokāli DJ Set',
+			startDate: '2025-07-18T16:00:00+02:00',
+			location: { '@type': 'Place', name: 'Main Stage' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Spēlētājs Trio',
+			startDate: '2025-07-18T17:30:00+02:00',
+			location: { '@type': 'Place', name: 'Castle Lawn' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Indie Folk Collective',
+			startDate: '2025-07-18T19:00:00+02:00',
+			location: { '@type': 'Place', name: 'Main Stage' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Midnight Soundscape',
+			startDate: '2025-07-18T21:00:00+02:00',
+			location: { '@type': 'Place', name: 'Castle Ruins' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Workshops: Beatmaking & DIY Synth',
+			startDate: '2025-07-19T12:00:00+02:00',
+			location: { '@type': 'Place', name: 'Workshop Tent' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Panel: Music Production Tips',
+			startDate: '2025-07-19T14:00:00+02:00',
+			location: { '@type': 'Place', name: 'Workshop Tent' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Indie Rock Showcase',
+			startDate: '2025-07-19T16:00:00+02:00',
+			location: { '@type': 'Place', name: 'Main Stage' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Electronic Live Act',
+			startDate: '2025-07-19T18:30:00+02:00',
+			location: { '@type': 'Place', name: 'Castle Lawn' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Headliner: Alt-Rock Sensation',
+			startDate: '2025-07-19T20:00:00+02:00',
+			location: { '@type': 'Place', name: 'Main Stage' },
+		},
+		{
+			'@type': 'Event',
+			name: 'Closing DJ Ceremony',
+			startDate: '2025-07-19T22:00:00+02:00',
+			location: { '@type': 'Place', name: 'Main Stage' },
+		},
 	],
 	keywords: [
 		'music festival',
@@ -259,7 +269,6 @@ const jsonLd = {
 	previousStartDate: '2024-07-20',
 	maximumVirtualAttendeeCapacity: 0,
 	isAccessibleForFree: false,
-	eventType: ['Music Festival', 'Cultural Event'],
 	sponsor: {
 		'@type': 'Organization',
 		name: 'Brain Corp',
@@ -357,11 +366,11 @@ export default function EventPage() {
 				<meta property="og:image" content={data.image} />
 				<meta property="og:url" content={data.fullUrl} />
 				<link rel="canonical" href={data.fullUrl} />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
 			</Head>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				{/* SEO intro for Festivāls Fāze */}
 				<section className="mb-6">

@@ -14,102 +14,118 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import { Button } from '@/components/ui/button';
+import { Recipe, WithContext } from 'schema-dts';
+
+const data = {
+	title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup)',
+	shortDescription:
+		'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
+	fullUrl: 'https://ernests.dev/creamy-beetroot-soup',
+	image: 'https://ernests.dev/images/beetroot_soup.webp',
+	author: { name: 'Ernests Dane', url: 'https://ernests.dev/about-us' },
+	datePublished: '2025-04-22',
+	prepTime: 'PT20M',
+	cookTime: 'PT30M',
+	totalTime: 'PT50M',
+	recipeYield: '4 servings',
+	recipeCategory: 'Soup',
+	recipeCuisine: 'Latvian',
+	keywords: ['beet', 'soup', 'cold soup', 'Latvian recipe'],
+	nutrition: {
+		calories: '150 kcal',
+		fatContent: '6 g',
+		carbohydrateContent: '18 g',
+		proteinContent: '4 g',
+	},
+	ingredients: [
+		'4 medium beets, roasted or boiled, peeled and diced',
+		'1 large cucumber, diced',
+		'4 radishes, thinly sliced',
+		'1 small bunch fresh dill, chopped',
+		'2 green onions, thinly sliced',
+		'4 cups plain kefir or buttermilk',
+		'1 cup sour cream',
+		'1 Tbsp lemon juice',
+		'Salt and freshly ground black pepper, to taste',
+		'4 hard‑boiled eggs, halved (optional garnish)',
+	],
+	instructions: [
+		'In a blender, combine diced beets, kefir (or buttermilk), and sour cream. Blend until smooth and creamy.',
+		'Pour mixture into a large bowl. Stir in cucumber, radishes, dill, and green onions.',
+		'Season with lemon juice, salt, and pepper. Adjust seasoning to taste.',
+		'Chill in the refrigerator for at least 1 hour to let flavors meld.',
+		'Serve cold, garnished with egg halves and a sprig of dill.',
+	],
+	tips: [
+		'Roast beets wrapped in foil to intensify their sweetness.',
+		'Substitute sour cream with Greek yogurt for a lighter texture.',
+		'Add a splash of vinegar for extra tang.',
+	],
+	aggregateRating: {
+		ratingValue: 4.8,
+		ratingCount: 24,
+	},
+};
+
+const jsonLd: WithContext<Recipe> = {
+	'@context': 'https://schema.org',
+	'@type': 'Recipe',
+	name: data.title,
+	image: [data.image],
+	author: { '@type': 'Person', name: data.author.name, url: data.author.url },
+	datePublished: data.datePublished,
+	description: data.shortDescription,
+	prepTime: data.prepTime,
+	cookTime: data.cookTime,
+	totalTime: data.totalTime,
+	recipeYield: data.recipeYield,
+	recipeCategory: data.recipeCategory,
+	recipeCuisine: data.recipeCuisine,
+	keywords: data.keywords.join(', '),
+	nutrition: { '@type': 'NutritionInformation', ...data.nutrition },
+	recipeIngredient: data.ingredients,
+	recipeInstructions: data.instructions.map((step, i) => ({
+		'@type': 'HowToStep',
+		text: step,
+		position: i + 1,
+	})),
+	aggregateRating: {
+		'@type': 'AggregateRating',
+		ratingValue: data.aggregateRating.ratingValue,
+		reviewCount: data.aggregateRating.ratingCount,
+	},
+};
 
 export const metadata = {
 	title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup) – Festivāls FĀZE',
 	description:
 		'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
-
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup)',
 		description:
 			'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
-		images: ['https://your-domain.com/recipe/images/beetroot_soup.webp'],
+		images: ['https://ernests.dev/images/beetroot_soup.webp'],
+	},
+	openGraph: {
+		title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup)',
+		description:
+			'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
+		images: [
+			{
+				url: 'https://ernests.dev/images/beetroot_soup.webp',
+				width: 1200,
+				height: 630,
+				alt: 'Bowl of creamy cold beet soup',
+			},
+		],
+	},
+	other: {
+		'application-ld+json': JSON.stringify(jsonLd),
 	},
 };
 
 export default function RecipePage() {
-	const data = {
-		title: 'Aukstā biešu zupa (Latvian Creamy Cold Beet Soup)',
-		shortDescription:
-			'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
-		fullUrl: 'https://ernests.dev/creamy-beetroot-soup',
-		image: '/images/beetroot_soup.webp',
-		author: { name: 'Ernests Dane', url: 'https://ernests.dev/about-us' },
-		datePublished: '2025-04-22',
-		prepTime: 'PT20M',
-		cookTime: 'PT30M',
-		totalTime: 'PT50M',
-		recipeYield: '4 servings',
-		recipeCategory: 'Soup',
-		recipeCuisine: 'Latvian',
-		keywords: ['beet', 'soup', 'cold soup', 'Latvian recipe'],
-		nutrition: {
-			calories: '150 kcal',
-			fatContent: '6 g',
-			carbohydrateContent: '18 g',
-			proteinContent: '4 g',
-		},
-		ingredients: [
-			'4 medium beets, roasted or boiled, peeled and diced',
-			'1 large cucumber, diced',
-			'4 radishes, thinly sliced',
-			'1 small bunch fresh dill, chopped',
-			'2 green onions, thinly sliced',
-			'4 cups plain kefir or buttermilk',
-			'1 cup sour cream',
-			'1 Tbsp lemon juice',
-			'Salt and freshly ground black pepper, to taste',
-			'4 hard‑boiled eggs, halved (optional garnish)',
-		],
-		instructions: [
-			'In a blender, combine diced beets, kefir (or buttermilk), and sour cream. Blend until smooth and creamy.',
-			'Pour mixture into a large bowl. Stir in cucumber, radishes, dill, and green onions.',
-			'Season with lemon juice, salt, and pepper. Adjust seasoning to taste.',
-			'Chill in the refrigerator for at least 1 hour to let flavors meld.',
-			'Serve cold, garnished with egg halves and a sprig of dill.',
-		],
-		tips: [
-			'Roast beets wrapped in foil to intensify their sweetness.',
-			'Substitute sour cream with Greek yogurt for a lighter texture.',
-			'Add a splash of vinegar for extra tang.',
-		],
-		aggregateRating: {
-			ratingValue: 4.8,
-			ratingCount: 24,
-		},
-	};
-
-	const jsonLd = {
-		'@context': 'https://schema.org/',
-		'@type': 'Recipe',
-		name: data.title,
-		image: [data.image],
-		author: { '@type': 'Person', name: data.author.name, url: data.author.url },
-		datePublished: data.datePublished,
-		description: data.shortDescription,
-		prepTime: data.prepTime,
-		cookTime: data.cookTime,
-		totalTime: data.totalTime,
-		recipeYield: data.recipeYield,
-		recipeCategory: data.recipeCategory,
-		recipeCuisine: data.recipeCuisine,
-		keywords: data.keywords.join(', '),
-		nutrition: { '@type': 'NutritionInformation', ...data.nutrition },
-		recipeIngredient: data.ingredients,
-		recipeInstructions: data.instructions.map((step, i) => ({
-			'@type': 'HowToStep',
-			text: step,
-			position: i + 1,
-		})),
-		aggregateRating: {
-			'@type': 'AggregateRating',
-			ratingValue: data.aggregateRating.ratingValue,
-			reviewCount: data.aggregateRating.ratingCount,
-		},
-	};
-
 	return (
 		<div>
 			<Head>
