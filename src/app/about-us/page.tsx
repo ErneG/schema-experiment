@@ -88,8 +88,18 @@ export default function AboutUsPage() {
 		{
 			year: '2025',
 			title: 'New Horizons',
-			description:
-				'Planning our largest event to date with over 50 artists, expanded venues, and international collaborations.',
+			description: (
+				<>
+					Planning our largest event to date with over 50 artists, expanded
+					venues, and international collaborations.{' '}
+					<Link
+						href="/festivals-FAZE-2025"
+						className="text-primary hover:underline"
+					>
+						Learn more about FĀZE&apos;25
+					</Link>
+				</>
+			),
 		},
 	];
 
