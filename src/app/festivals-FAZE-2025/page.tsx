@@ -344,11 +344,11 @@ export default function EventPage() {
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				{/* SEO intro for Festivāls Fāze */}
 				<section className="mb-6">
-					<h1 className="text-4xl font-bold mb-2">Festivāls Fāze 2025</h1>
+					<h1 className="text-4xl font-bold mb-2">Festivāls Fāze'25</h1>
 					<p className="text-lg text-muted-foreground">
 						Festivāls Fāze is Latvia&apos;s most exciting summer festival,
 						uniting emerging music, art, and technology at Zentenes pils.
-						Explore the Festivāls Fāze 2025 lineup, schedule, and all you need
+						Explore the Festivāls Fāze'25 lineup, schedule, and all you need
 						to know for your visit.
 					</p>
 				</section>
@@ -363,7 +363,7 @@ export default function EventPage() {
 						<div className="relative aspect-video w-full mb-6 rounded-lg overflow-hidden">
 							<Image
 								src="/images/cover.webp"
-								alt="Festivāls FĀZE 2025 - Live music performance at Zentenes Castle featuring emerging Latvian artists and interactive art installations"
+								alt="Festivāls FĀZE'25 - Live music performance at Zentenes Castle featuring emerging Latvian artists and interactive art installations"
 								fill
 								className="object-cover"
 								priority
@@ -749,7 +749,7 @@ export async function generateMetadata() {
 	const data = {
 		title: "Festivāls FĀZE'25",
 		description:
-			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
+			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze'25 program, tickets, and visitor info.",
 	};
 
 	return {
@@ -763,7 +763,7 @@ export async function generateMetadata() {
 					url: '/cover.webp',
 					width: 1200,
 					height: 630,
-					alt: 'Festivāls FĀZE 2025',
+					alt: 'Festivāls FĀZE\'25',
 				},
 			],
 		},
