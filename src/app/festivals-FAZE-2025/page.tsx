@@ -35,32 +35,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Event, WithContext } from 'schema-dts';
 
-export const metadata = {
-	title: "Festivāls FĀZE'25",
-	description:
-		"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
-	twitter: {
-		card: 'summary_large_image',
-		title: "Festivāls FĀZE'25",
-		description:
-			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
-		images: ['/cover.webp'],
-	},
-	openGraph: {
-		title: "Festivāls FĀZE'25",
-		description:
-			"Festivāls Fāze is Latvia's annual celebration of new music, art, and technology at Zentenes pils. Discover the full Festivāls Fāze 2025 program, tickets, and visitor info.",
-		images: [
-			{
-				url: '/cover.webp',
-				width: 1200,
-				height: 630,
-				alt: 'Festivāls FĀZE 2025',
-			},
-		],
-	},
-};
-
 // Move jsonLd outside of the component to be accessible by generateMetadata
 const jsonLd: WithContext<Event> = {
 	'@context': 'https://schema.org',
@@ -68,7 +42,7 @@ const jsonLd: WithContext<Event> = {
 	name: "Festivāls FĀZE'25",
 	startDate: '2025-07-18T15:00',
 	endDate: '2025-07-19T23:00',
-	eventStatus: 'https://schema.org/EventScheduled',
+	eventStatus: 'http://schema.org/EventRescheduled',
 	eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
 	location: {
 		'@type': 'Place',
@@ -366,10 +340,6 @@ export default function EventPage() {
 				<meta property="og:image" content={data.image} />
 				<meta property="og:url" content={data.fullUrl} />
 				<link rel="canonical" href={data.fullUrl} />
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-				/>
 			</Head>
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				{/* SEO intro for Festivāls Fāze */}
@@ -767,6 +737,10 @@ export default function EventPage() {
 					</p>
 				</div>
 			</main>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 		</>
 	);
 }
@@ -798,9 +772,6 @@ export async function generateMetadata() {
 			title: data.title,
 			description: data.description,
 			images: ['/cover.webp'],
-		},
-		other: {
-			'application-ld+json': JSON.stringify(jsonLd),
-		},
+		}
 	};
 }

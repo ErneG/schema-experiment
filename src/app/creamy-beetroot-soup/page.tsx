@@ -21,7 +21,7 @@ const data = {
 	shortDescription:
 		'A refreshing and tangy cold beet soup from Latvia, perfect for hot summer days.',
 	fullUrl: 'https://ernests.dev/creamy-beetroot-soup',
-	image: 'https://ernests.dev/images/beetroot_soup.webp',
+	image: '/images/beetroot_soup.webp',
 	author: { name: 'Ernests Dane', url: 'https://ernests.dev/about-us' },
 	datePublished: '2025-04-22',
 	prepTime: 'PT20M',
@@ -119,10 +119,7 @@ export const metadata = {
 				alt: 'Bowl of creamy cold beet soup',
 			},
 		],
-	},
-	other: {
-		'application-ld+json': JSON.stringify(jsonLd),
-	},
+	}
 };
 
 export default function RecipePage() {
@@ -137,13 +134,11 @@ export default function RecipePage() {
 				<meta property="og:url" content={data.fullUrl} />
 				<meta name="twitter:card" content="summary_large_image" />
 				<link rel="canonical" href={data.fullUrl} />
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify(jsonLd),
-					}}
-				/>
 			</Head>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				<nav className="text-sm mb-6">
 					<Link href="/" className="text-primary hover:underline">

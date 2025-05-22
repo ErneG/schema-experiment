@@ -42,7 +42,7 @@ const data = {
 	shortDescription:
 		'Step-by-step guide to flashing an ESP32 board and serving a web interface for driving LED installations.',
 	fullUrl: 'https://ernests.dev/esp-led-controller',
-	image: 'https://ernests.dev/images/ESP32_LED_STRIP_SCHEMA.jpg',
+	image: '/images/ESP32_LED_STRIP_SCHEMA.jpg',
 	datePublished: '2025-05-22',
 	totalTime: 'PT30M',
 	supplies: [
@@ -146,10 +146,7 @@ export const metadata = {
 				alt: 'ESP32 LED Control Setup',
 			},
 		],
-	},
-	other: {
-		'application-ld+json': JSON.stringify(jsonLd),
-	},
+	}
 };
 
 export default function HowToPage() {
@@ -163,11 +160,11 @@ export default function HowToPage() {
 				<meta property="og:image" content={data.fullUrl + data.image} />
 				<meta property="og:url" content={data.fullUrl} />
 				<link rel="canonical" href={data.fullUrl} />
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-				/>
 			</Head>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				<Card className="mb-8">
 					<CardHeader>
