@@ -111,7 +111,8 @@ const jsonLd: WithContext<TechArticle> = {
 	image: 'https://ernests.dev/images/ESP32_LED_STRIP_SCHEMA.jpg',
 	author: {
 		'@type': 'Person',
-		name: 'Your Name',
+		name: 'Ernests Dane',
+		url: 'https://github.com/ErneG',
 	},
 	publisher: {
 		'@type': 'Organization',
