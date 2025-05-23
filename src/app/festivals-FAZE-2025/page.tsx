@@ -189,7 +189,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Festival Team',
+					name: 'The Sunrise Brass',
 				},
 			],
 			offers: [
@@ -244,7 +244,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Local DJ',
+					name: 'DJ Rīga Nights',
 				},
 			],
 			offers: [
@@ -355,7 +355,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Indie Folk Collective',
+					name: 'Baltic Willow',
 				},
 			],
 			offers: [
@@ -410,7 +410,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Midnight Soundscape',
+					name: 'Aurora Echoes',
 				},
 			],
 			offers: [
@@ -466,7 +466,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Workshop Facilitator',
+					name: 'SynthLab Collective',
 				},
 			],
 			offers: [
@@ -510,7 +510,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Panelists',
+					name: 'The Producers Panel',
 				},
 			],
 			offers: [
@@ -553,7 +553,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Indie Rock Band Name',
+					name: 'Northern Lights',
 				},
 			],
 			offers: [
@@ -596,7 +596,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'Electronic Artist Name',
+					name: 'DJ Neon Fox',
 				},
 			],
 			offers: [
@@ -684,7 +684,7 @@ const jsonLd: WithContext<Event> = {
 			performer: [
 				{
 					'@type': 'MusicGroup',
-					name: 'DJ Name Here',
+					name: 'DJ Luna Wave',
 				},
 			],
 			offers: [
