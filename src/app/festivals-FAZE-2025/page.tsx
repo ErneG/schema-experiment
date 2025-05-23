@@ -42,7 +42,7 @@ const jsonLd: WithContext<Event> = {
 	name: "Festivāls FĀZE'25",
 	startDate: '2025-07-18T15:00',
 	endDate: '2025-07-19T23:00',
-	eventStatus: 'http://schema.org/EventRescheduled',
+	eventStatus: 'https://schema.org/EventRescheduled',
 	eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
 	location: {
 		'@type': 'Place',
@@ -344,12 +344,12 @@ export default function EventPage() {
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				{/* SEO intro for Festivāls Fāze */}
 				<section className="mb-6">
-					<h1 className="text-4xl font-bold mb-2">Festivāls Fāze'25</h1>
+					<h1 className="text-4xl font-bold mb-2">Festivāls Fāze&apos;25</h1>
 					<p className="text-lg text-muted-foreground">
 						Festivāls Fāze is Latvia&apos;s most exciting summer festival,
 						uniting emerging music, art, and technology at Zentenes pils.
-						Explore the Festivāls Fāze'25 lineup, schedule, and all you need
-						to know for your visit.
+						Explore the Festivāls Fāze&apos;25 lineup, schedule, and all you
+						need to know for your visit.
 					</p>
 				</section>
 				<Card className="mb-8">
@@ -737,10 +737,10 @@ export default function EventPage() {
 					</p>
 				</div>
 			</main>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 		</>
 	);
 }
@@ -763,7 +763,7 @@ export async function generateMetadata() {
 					url: '/cover.webp',
 					width: 1200,
 					height: 630,
-					alt: 'Festivāls FĀZE\'25',
+					alt: "Festivāls FĀZE'25",
 				},
 			],
 		},
@@ -772,6 +772,6 @@ export async function generateMetadata() {
 			title: data.title,
 			description: data.description,
 			images: ['/cover.webp'],
-		}
+		},
 	};
 }

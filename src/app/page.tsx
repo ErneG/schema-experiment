@@ -55,7 +55,7 @@ export default function HomePage() {
 				<div className="absolute inset-0 flex items-center p-8 md:p-16">
 					<div className="max-w-2xl">
 						<h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-							Festivāls FĀZE'25
+							Festivāls FĀZE&apos;25
 						</h1>
 						<p className="text-xl text-white/90 mb-8">
 							Join us at Zentenes pils for Latvia&apos;s most exciting summer
