@@ -86,8 +86,21 @@ const jsonLd: WithContext<Recipe> = {
 	recipeIngredient: data.ingredients,
 	recipeInstructions: data.instructions.map((step, i) => ({
 		'@type': 'HowToStep',
+		name:
+			i === 0
+				? 'Blend beets and dairy'
+				: i === 1
+				? 'Add vegetables and herbs'
+				: i === 2
+				? 'Season the soup'
+				: i === 3
+				? 'Chill the soup'
+				: i === 4
+				? 'Serve'
+				: `Step ${i + 1}`,
 		text: step,
 		position: i + 1,
+		url: `https://ernests.dev/creamy-beetroot-soup#step${i + 1}`,
 	})),
 	aggregateRating: {
 		'@type': 'AggregateRating',
@@ -119,7 +132,7 @@ export const metadata = {
 				alt: 'Bowl of creamy cold beet soup',
 			},
 		],
-	}
+	},
 };
 
 export default function RecipePage() {
@@ -135,10 +148,10 @@ export default function RecipePage() {
 				<meta name="twitter:card" content="summary_large_image" />
 				<link rel="canonical" href={data.fullUrl} />
 			</Head>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 			<main className="container max-w-4xl mx-auto py-8 px-4">
 				<nav className="text-sm mb-6">
 					<Link href="/" className="text-primary hover:underline">
