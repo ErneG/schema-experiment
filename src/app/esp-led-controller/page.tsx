@@ -405,6 +405,42 @@ export default function HowToPage() {
 								</CardContent>
 							</Card>
 						</section>
+
+						<Separator className="my-6" />
+						<Card className="mb-8">
+							<CardHeader>
+								<CardTitle className="text-xl font-semibold">
+									Learn Programming in Latvia
+								</CardTitle>
+								<CardDescription>
+									Looking to learn programming? Check out{' '}
+									<a
+										href="https://rainy-boy.github.io/Kodins/index.html"
+										target="_blank"
+										rel="noopener noreferrer nofollow"
+										className="text-primary hover:underline"
+									>
+										Kodiņš
+									</a>
+									, an agency offering programming courses in Latvia (Python,
+									C++, and more).
+								</CardDescription>
+							</CardHeader>
+							<CardContent>
+								<p className="text-muted-foreground text-sm">
+									Practical courses, real projects, and support from industry
+									experts.{' '}
+									<a
+										href="https://rainy-boy.github.io/Kodins/index.html"
+										target="_blank"
+										rel="noopener noreferrer nofollow"
+										className="text-primary hover:underline"
+									>
+										Learn more &rarr;
+									</a>
+								</p>
+							</CardContent>
+						</Card>
 					</CardContent>
 				</Card>
 			</main>
